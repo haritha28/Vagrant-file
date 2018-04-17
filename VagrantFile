@@ -80,10 +80,11 @@ Vagrant.configure("2") do |config|
 	echo "DPDK_in_Containers_Hands-on_Lab" >> .git/info/sparse-checkout
 	git pull origin master
 	mv DPDK_in_Containers_Hands-on_Lab/dpdk-container-lab /home/ubuntu/training
-	cd /home/ubuntu
+	sudo su 
+	cd /home/vagrant
 	mv pktgen-dpdk-pktgen-3.1.1 /home/ubuntu/training/dpdk-container-lab/docker-build/pktgen/
 	mv /home/ubuntu/training/dpdk-container-lab/docker-build/pktgen/pktgen-dpdk-pktgen-3.1.1 /home/ubuntu/training/dpdk-container-lab/docker-build/pktgen/pktgen
-	cp -r /home/ubuntu/dpdk-stable-16.11.1 /home/ubuntu/training/dpdk-container-lab/docker-build/testpmd/
+	cp -r /home/vagrant/dpdk-stable-16.11.1 /home/ubuntu/training/dpdk-container-lab/docker-build/testpmd/
 	mv /home/ubuntu/training/dpdk-container-lab/docker-build/testpmd/dpdk-stable-16.11.1 /home/ubuntu/training/dpdk-container-lab/docker-build/testpmd/dpdk
 	cd /home/ubuntu/training/dpdk-container-lab/docker-build/testpmd/dpdk
         mv ../2M-hugepage.patch .
